@@ -5,7 +5,6 @@ import Pages from "./pages";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import * as Sentry from "@sentry/react";
 import { BrowserTracing } from "@sentry/tracing";
-import App from "./App";
 
 const client = new ApolloClient({
   //uri: "https://server-catstronauts.herokuapp.com/", // change to YOUR own production server
