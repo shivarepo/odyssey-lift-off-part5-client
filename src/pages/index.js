@@ -4,13 +4,18 @@ import { Router } from '@reach/router';
 import Tracks from './tracks';
 import Track from './track';
 import Module from './module';
+import * as Sentry from "@sentry/react";
 
-export default function Pages() {
+function Pages() {
   return (
+    <Sentry>
     <Router primary={false} component={Fragment}>
       <Tracks path="/" />
       <Track path="/track/:trackId" />
       <Module path="/track/:trackId/module/:moduleId" />
     </Router>
+    </Sentry>
   );
 }
+
+export default Sentry.withProfiler(Pages);
